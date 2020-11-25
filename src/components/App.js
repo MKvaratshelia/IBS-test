@@ -4,6 +4,7 @@ import { Form } from "./Form";
 import { WeatherList } from "./WeatherList";
 
 const API_KEY = "bf1a366ca5874c2b9a3eba8b316c1d5b";
+
 function App() {
   const [weather, setWeather] = useState({
     name: "",
@@ -48,6 +49,7 @@ function App() {
   };
 
   const fetchData = async (city) => {
+    setLoadingData(false);
     setLoadListButton(true);
     try {
       const response = await fetch(
@@ -64,7 +66,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="mb-3">Приложение погоды</h1>
+      <h1 className="m-3 title">Информатор прогноза погоды</h1>
       <Form
         onSubmit={getingWeather}
         load={loading}
