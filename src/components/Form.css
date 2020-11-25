@@ -1,6 +1,9 @@
 .error {
   color: red;
 }
+.btn:disabled {
+  cursor: no-drop;
+}
 
 .button {
   width: 200px;

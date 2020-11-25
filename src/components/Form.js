@@ -20,27 +20,45 @@ export const Form = (props) => {
 
   const handleSubmit = (e, city) => {
     props.onSubmit(e, city);
-    setCity("");
+  };
+
+  const handleClickButton = (city) => {
+    props.onClickHandler(city);
   };
   return (
-    <form onSubmit={(e) => handleSubmit(e, city)}>
+    <form
+      className="mb-5"
+      onSubmit={(e) => {
+        handleSubmit(e, city);
+      }}
+    >
       <div className="form-group">
         <input
-          placeholder="Введите название города"
           name="city"
+          placeholder="Введите название города"
           type="text"
           className="form-control"
           value={city}
           onChange={handleChangeCity}
         />
-        {error ? <span className="error">Введите название города</span> : null}
+        {error ? (
+          <span className="error">Поле поиска не может быть пустым</span>
+        ) : null}
       </div>
       <button
         disabled={buttonDisabled}
         type="submit"
-        className="btn btn-primary button"
+        className="btn btn-primary button day"
       >
         {props.load ? "Загрузка..." : "Узнать погоду"}
+      </button>
+      <button
+        disabled={buttonDisabled}
+        className="btn btn-success ml-2 button"
+        type="button"
+        onClick={() => handleClickButton(city)}
+      >
+        {props.loadList ? "Загрузка..." : "На 5 дней"}
       </button>
     </form>
   );
