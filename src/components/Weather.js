@@ -1,6 +1,7 @@
 import React from "react";
 
 export const Weather = ({ weather }) => {
+  console.log(weather);
   return (
     <div className="card mt-4">
       <p>
@@ -9,16 +10,16 @@ export const Weather = ({ weather }) => {
       <div>
         <img
           style={{ width: "50px", height: "50px", marginRight: "10px" }}
-          src={`http://openweathermap.org/img/w/${weather.icon}.png`}
+          src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
           alt="Иконка погоды"
         />
-        <span>{weather.description}</span>
+        <span>{weather.weather[0].description}</span>
       </div>
       <p>
-        <strong>Температура:</strong> {weather.temp} &deg;C
+        <strong>Температура:</strong> {Math.round(weather.main.temp)} &deg;C
       </p>
       <p>
-        <strong>Ветер:</strong> {weather.wind} м/с
+        <strong>Ветер:</strong> {Math.round(weather.wind.speed)} м/с
       </p>
     </div>
   );

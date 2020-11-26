@@ -6,12 +6,13 @@ import { WeatherList } from "./WeatherList";
 const API_KEY = "bf1a366ca5874c2b9a3eba8b316c1d5b";
 
 function App() {
-  const [weather, setWeather] = useState({
-    name: "",
-    temp: "",
-    wind: "",
-    icon: "",
-  });
+  // const [weather, setWeather] = useState({
+  //   name: "",
+  //   temp: "",
+  //   wind: "",
+  //   icon: "",
+  // });
+  const [weather, setWeather] = useState({});
 
   const [loadingData, setLoadingData] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -28,17 +29,17 @@ function App() {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=ru`
       );
       const data = await response.json();
-      console.log(data);
-      setWeather((prev) => {
-        return {
-          ...prev,
-          name: data.name,
-          temp: Math.round(data.main.temp),
-          wind: Math.round(data.wind.speed),
-          icon: data.weather[0].icon,
-          description: data.weather[0].description,
-        };
-      });
+      // setWeather((prev) => {
+      //   return {
+      //     ...prev,
+      //     name: data.name,
+      //     temp: Math.round(data.main.temp),
+      //     wind: Math.round(data.wind.speed),
+      //     icon: data.weather[0].icon,
+      //     description: data.weather[0].description,
+      //   };
+      // });
+      setWeather(data);
       setLoadingData(true);
       setLoading(false);
       setLoadListDays(false);
