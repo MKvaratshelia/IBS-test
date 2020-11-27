@@ -1,8 +1,15 @@
+import { useObserver } from "mobx-react";
 import React from "react";
 
 export const Weather = ({ weather }) => {
-  console.log(weather);
-  return (
+  // if (weather.cod === "404") {
+  //   return useObserver(() => (
+  //     <div className="alert alert-danger" role="alert">
+  //       <span>{props.weather.message}</span>
+  //     </div>
+  //   ));
+  // }
+  return useObserver(() => (
     <div className="card mt-4">
       <p>
         <strong>Город:</strong> {weather.name}
@@ -22,5 +29,5 @@ export const Weather = ({ weather }) => {
         <strong>Ветер:</strong> {Math.round(weather.wind.speed)} м/с
       </p>
     </div>
-  );
+  ));
 };

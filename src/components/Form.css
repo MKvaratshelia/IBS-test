@@ -1,5 +1,16 @@
+@keyframes error {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .error {
   color: red;
+  animation: ease-in-out error 0.2s;
+  position: absolute;
 }
 .btn:disabled {
   cursor: no-drop;
@@ -7,4 +18,8 @@
 
 .button {
   width: 200px;
+}
+
+.form-group {
+  position: relative;
 }

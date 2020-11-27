@@ -1,12 +1,11 @@
 import React from "react";
 
-export const WeatherList = ({ listDays }) => {
+export const WeatherList = (props) => {
   return (
     <div className="">
       <h2 className="mt-4">Погода на 5 дней</h2>
       <div style={{ padding: "0px" }} className="row">
-        {listDays.map((weather, index) => {
-          console.log(weather);
+        {props.listDays.map((weather, index) => {
           return (
             <div key={Math.random() + index} className="card cards_item m-2">
               <div className="card-body">

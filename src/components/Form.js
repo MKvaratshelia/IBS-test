@@ -18,21 +18,14 @@ export const Form = (props) => {
     setCity(target);
   };
 
-  const handleSubmit = (e, city) => {
-    props.onSubmit(e, city);
-  };
-
-  const handleClickButton = (city) => {
-    props.onClickHandler(city);
-  };
   return (
     <form
       className="mb-5"
       onSubmit={(e) => {
-        handleSubmit(e, city);
+        props.onSubmit(e, city);
       }}
     >
-      <div className="form-group">
+      <div className="form-group mb-5">
         <input
           name="city"
           placeholder="Введите название города"
@@ -56,7 +49,7 @@ export const Form = (props) => {
         disabled={buttonDisabled}
         className="btn btn-success ml-2 button"
         type="button"
-        onClick={() => handleClickButton(city)}
+        onClick={() => props.onClickHandler(city)}
       >
         {props.loadList ? "Загрузка..." : "На 5 дней"}
       </button>
