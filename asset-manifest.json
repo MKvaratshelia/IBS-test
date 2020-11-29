@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/IBS-test/static/css/main.9dfd3842.chunk.css",
-    "main.js": "/IBS-test/static/js/main.30a12109.chunk.js",
-    "main.js.map": "/IBS-test/static/js/main.30a12109.chunk.js.map",
+    "main.js": "/IBS-test/static/js/main.d0270525.chunk.js",
+    "main.js.map": "/IBS-test/static/js/main.d0270525.chunk.js.map",
     "runtime-main.js": "/IBS-test/static/js/runtime-main.5903ef0d.js",
     "runtime-main.js.map": "/IBS-test/static/js/runtime-main.5903ef0d.js.map",
     "static/js/2.a847047d.chunk.js": "/IBS-test/static/js/2.a847047d.chunk.js",
     "static/js/2.a847047d.chunk.js.map": "/IBS-test/static/js/2.a847047d.chunk.js.map",
     "index.html": "/IBS-test/index.html",
-    "precache-manifest.616b6fb2191837d7881132d16150bb1d.js": "/IBS-test/precache-manifest.616b6fb2191837d7881132d16150bb1d.js",
+    "precache-manifest.88ff115126755b39ff5b298081c3e652.js": "/IBS-test/precache-manifest.88ff115126755b39ff5b298081c3e652.js",
     "service-worker.js": "/IBS-test/service-worker.js",
     "static/css/main.9dfd3842.chunk.css.map": "/IBS-test/static/css/main.9dfd3842.chunk.css.map",
     "static/js/2.a847047d.chunk.js.LICENSE.txt": "/IBS-test/static/js/2.a847047d.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5903ef0d.js",
     "static/js/2.a847047d.chunk.js",
     "static/css/main.9dfd3842.chunk.css",
-    "static/js/main.30a12109.chunk.js"
+    "static/js/main.d0270525.chunk.js"
   ]
 }
