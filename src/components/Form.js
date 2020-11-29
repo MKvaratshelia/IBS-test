@@ -8,7 +8,7 @@ export const Form = (props) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const handleChangeCity = (e) => {
-    const target = e.target.value;
+    const target = e.target.value.trim().replace(/[^a-z]/g, "");
     if (target.length === 0) {
       setError(true);
       setButtonDisabled(true);
@@ -37,14 +37,14 @@ export const Form = (props) => {
       <button
         disabled={buttonDisabled}
         type="submit"
-        className="btn btn-primary button day"
+        className="btn btn-primary button"
         onClick={(e) => props.onClickWeather(e, city)}
       >
         {props.load ? "Загрузка..." : "Узнать погоду"}
       </button>
       <button
         disabled={buttonDisabled}
-        className="btn btn-success ml-2 button"
+        className="btn btn-success button"
         type="submit"
         onClick={(e) => props.onClickWeatherForDays(e, city)}
       >

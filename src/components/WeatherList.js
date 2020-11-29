@@ -5,10 +5,7 @@ export const WeatherList = (props) => {
   return (
     <section className="">
       <h2 className="mt-4">Погода на 5 дней</h2>
-      <div
-        style={{ padding: "0px" }}
-        className="row d-flex justify-content-between"
-      >
+      <div style={{ padding: "0px" }} className="row justify-content-between">
         {props.listDays.list.map((weather, index) => {
           return (
             <Weather
