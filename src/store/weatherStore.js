@@ -5,7 +5,7 @@ export const createWeatherStore = () => {
     weather: {},
     loadingData: false,
     loadingButton: false,
-    LoadingListButton: false,
+    loadingListButton: false,
     loadListDays: false,
     weatherForDays: {},
 
@@ -34,10 +34,10 @@ export const createWeatherStore = () => {
       e.preventDefault();
 
       this.loadingData = false;
-      this.LoadingListButton = true;
+      this.loadingListButton = true;
       try {
         const response = await fetch(
-          `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=ru`
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=ru`
         );
         const data = await response.json();
         // this.weatherForDays.push(...this.weatherForDays, ...data.list);
@@ -45,7 +45,7 @@ export const createWeatherStore = () => {
         console.log(data);
 
         this.loadListDays = true;
-        this.LoadingListButton = false;
+        this.loadingListButton = false;
       } catch (e) {
         console.log(e);
       }
