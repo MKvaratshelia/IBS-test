@@ -8,7 +8,7 @@ export const Form = (props) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const handleChangeCity = (e) => {
-    const target = e.target.value.trim().replace(/[^a-z]/g, "");
+    const target = e.target.value.trim().replace(/[0-9]/g, "");
     if (target.length === 0) {
       setError(true);
       setButtonDisabled(true);

@@ -18,6 +18,8 @@
 
 .button {
   width: 200px;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .form-group {
