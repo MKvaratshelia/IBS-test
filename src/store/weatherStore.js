@@ -7,11 +7,14 @@ export const createWeatherStore = () => {
     loadingButton: false,
     LoadingListButton: false,
     loadListDays: false,
-    weatherList: [],
+    weatherForDays: {},
 
     async getingWeather(e, city) {
       e.preventDefault();
-      this.setLoadingButton(true);
+
+      this.loadingButton = true;
+      this.loadListDays = false;
+
       try {
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=ru`
@@ -19,36 +22,30 @@ export const createWeatherStore = () => {
         const data = await response.json();
         console.log(data);
         this.weather = { ...this.weather, ...data };
-        this.setLoadingData(true);
-        this.setLoadingButton(false);
+
+        this.loadingButton = false;
+        this.loadingData = true;
       } catch (e) {
         console.log(e);
       }
     },
-    setLoadingData(boolean) {
-      this.loadingData = boolean;
-    },
-    setLoadingButton(boolean) {
-      this.loadingButton = boolean;
-    },
-    setLoadingListButton(boolean) {
-      this.loadingListButton = boolean;
-    },
-    setLoadListDays(boolean) {
-      this.loadListDays = boolean;
-    },
 
-    async fetchData(city) {
-      this.setLoadingData(false);
-      this.setLoadingListButton(true);
+    async getingWeatherForDays(e, city) {
+      e.preventDefault();
+
+      this.loadingData = false;
+      this.LoadingListButton = true;
       try {
         const response = await fetch(
           `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric&lang=ru`
         );
         const data = await response.json();
-        this.weatherList.push(...this.weatherList, ...data.list);
-        this.setLoadingListButton(false);
-        this.setLoadListDays(true);
+        // this.weatherForDays.push(...this.weatherForDays, ...data.list);
+        this.weatherForDays = { ...this.weatherForDays, ...data };
+        console.log(data);
+
+        this.loadListDays = true;
+        this.LoadingListButton = false;
       } catch (e) {
         console.log(e);
       }

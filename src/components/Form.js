@@ -19,12 +19,7 @@ export const Form = (props) => {
   };
 
   return (
-    <form
-      className="mb-5"
-      onSubmit={(e) => {
-        props.onSubmit(e, city);
-      }}
-    >
+    <form className="mb-5">
       <div className="form-group mb-5">
         <input
           name="city"
@@ -42,14 +37,15 @@ export const Form = (props) => {
         disabled={buttonDisabled}
         type="submit"
         className="btn btn-primary button day"
+        onClick={(e) => props.onClickWeather(e, city)}
       >
         {props.load ? "Загрузка..." : "Узнать погоду"}
       </button>
       <button
         disabled={buttonDisabled}
         className="btn btn-success ml-2 button"
-        type="button"
-        onClick={() => props.onClickHandler(city)}
+        type="submit"
+        onClick={(e) => props.onClickWeatherForDays(e, city)}
       >
         {props.loadList ? "Загрузка..." : "На 5 дней"}
       </button>
